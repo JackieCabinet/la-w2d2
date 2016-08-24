@@ -29,7 +29,7 @@ var abs = function(number) {
 // Math.floor(3.5);  --> returns 3
 
 var floor = function(number) {
-    
+    return number.toFixed(0);
 };
 
 
@@ -42,7 +42,11 @@ var floor = function(number) {
 // Math.pow(2, 4);  --> returns 16
 
 var pow = function(base, exponent) {
-
+	var product = 1; 
+	for (var i = 0; i<exponent; i ++){
+		product *= base;
+	}
+	return product;
 };
 
 
@@ -54,7 +58,11 @@ var pow = function(base, exponent) {
 // Math.max(17, 9);  --> returns 17
 
 var max = function(x, y) {
-
+	if (x>y){
+		return x;
+	}else{
+		return y;
+	}
 };
 
 
@@ -65,6 +73,12 @@ var max = function(x, y) {
 // Example Usage:
 // Math.min(5, 7, 35, -7, 22);  --> returns -7
 
-var min = function() {
-
+var min = function(anArray) {
+	smallest = anArray[0];
+	for (var i = 1; i<anArray.length; i ++){
+		if (smallest > anArray[i]){
+			smallest =  anArray[i];
+		} 
+	}
+	return smallest;
 };
